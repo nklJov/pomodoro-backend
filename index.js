@@ -1,11 +1,12 @@
 const express = require('express');
-const app = express();
+const cors = require('cors');
 const dbUserFunctions = require("./db/user")
 const dbFunctions = require("./db/todos")
-const cors = require('cors');
 const bodyParser = require('body-parser');
-app.use(cors());
 
+
+const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
